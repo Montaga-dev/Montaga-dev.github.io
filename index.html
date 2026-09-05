@@ -145,6 +145,7 @@
   .proj-bullets .val{color:var(--cyan)}
   .proj-chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{font-size:10.5px;padding:2px 8px;background:var(--bg);border:1px solid var(--border);color:var(--dim);border-radius:2px;font-family:'Geist Mono',monospace}
+  .proj-note{font-size:10.5px;color:var(--dim);margin-top:12px;font-style:italic;opacity:.75}
 
   /* ── EXPERIENCE ── */
   .exp-list{display:flex;flex-direction:column;gap:28px}
@@ -268,32 +269,32 @@
             <span class="proj-icon">◈</span>
             <span class="proj-name">aimatcher</span>
             <span class="proj-status private">private</span>
-            <span class="proj-status active">technical brief</span>
+            <span class="proj-status active">lead engineer</span>
           </div>
         </div>
-        <div class="proj-lang"><span class="lang-dot" style="background:#3572A5"></span>Python · Airflow + Celery on Kubernetes · LLM Matching</div>
+        <div class="proj-lang"><span class="lang-dot" style="background:#3572A5"></span>Python · Distributed Pipelines on Kubernetes · LLM Matching</div>
         <p class="proj-desc">
           <span class="hl">Catalogue matching platform</span> that turns a raw supplier product file into
           reviewed, published listings across multiple marketplaces. Suppliers describe the same product
-          in completely different words, so an LLM scores candidates against the reference and the
-          editor only sees what's worth a second look.
+          in completely different words, so a language model scores candidates against the reference and
+          a human reviewer only sees what's worth a second look.
         </p>
         <div class="metrics">
           <div class="metric"><span class="v">3×</span><span class="l">throughput gain</span></div>
-          <div class="metric"><span class="v">multi-market</span><span class="l">crawled in parallel</span></div>
+          <div class="metric"><span class="v">multi-market</span><span class="l">processed in parallel</span></div>
           <div class="metric"><span class="v">zero-touch</span><span class="l">file → listings</span></div>
         </div>
         <ul class="proj-bullets">
-          <li><span class="kw">pipeline</span> → parse → keyword generation → parallel crawl → <span class="val">LLM match</span> → review → export</li>
-          <li><span class="kw">orchestration</span> → Airflow on <span class="val">KubernetesExecutor</span>, Celery for LLM-bound work, self-triggering stages</li>
-          <li><span class="kw">reliability</span> → race-safe finalize, DB-backed atomic retries, poison-batch isolation</li>
-          <li><span class="kw">ops</span> → advisory-lock grouping, idempotent export, bounded crawl retries</li>
+          <li><span class="kw">scope</span> → owned end to end: architecture, <span class="val">LLM integration</span>, data model, production operation</li>
+          <li><span class="kw">scale</span> → distributed workers on Kubernetes, unattended runs over large catalogues</li>
+          <li><span class="kw">reliability</span> → built for failure — a single bad record can't stall a job</li>
         </ul>
         <div class="proj-chips">
-          <span class="chip">FastAPI</span><span class="chip">Celery</span><span class="chip">Apache Airflow</span>
-          <span class="chip">PostgreSQL</span><span class="chip">advisory locks</span><span class="chip">AKS</span>
+          <span class="chip">Python</span><span class="chip">Celery</span><span class="chip">Apache Airflow</span>
+          <span class="chip">PostgreSQL</span><span class="chip">Kubernetes</span>
           <span class="chip">LLM orchestration</span>
         </div>
+        <p class="proj-note">Internal product — architecture details available on request.</p>
       </div>
 
       <!-- review-intelligence -->
